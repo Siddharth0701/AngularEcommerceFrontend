@@ -11,7 +11,7 @@ export class ProductService {
   private orderUrlCloud="http://flipkartnodejsapi.ap-south-1.elasticbeanstalk.com/api/order";
 
 
-  private product="http://localhost:3000/api/product";
+  //private product="http://localhost:3000/api/product";
 
   cartData = new EventEmitter<product[] | []>();
   constructor(private http: HttpClient) { }
@@ -89,7 +89,7 @@ export class ProductService {
       });
   }
   removeToCart(cartId: number) {
-    return this.http.delete('http://localhost:3000/api/cart/' + cartId);
+    return this.http.delete('http://flipkartnodejsapi.ap-south-1.elasticbeanstalk.com/api/cart/' + cartId);
   }
   currentCart() {
     let userStore = localStorage.getItem('user');
